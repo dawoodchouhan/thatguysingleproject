@@ -8,8 +8,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body { 
+background:url('http://www.fondsecran.eu/pictures/2015/0908/1/blurred-greenish-background-4k-wallpapers-234758.jpg');
+ margin:0px;
+  
+   background-repeat:no-repeat;
+   background-size:cover;
+  
+font-family: 'Ubuntu', sans-serif;
+ }
+ .login-form {
+ 
+ border:2px solid #999;
+  background:#2c3e50;
+  border-radius:10px;
+  box-shadow:0px 0px 10px #000;
+}
+ 
+ </style>
 <link href="<c:url value="/resources/css/logins.css" />"
 	rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src="js/index.js"></script>
 	</head>
 <body>
 	<div class="container">
@@ -55,18 +78,7 @@
 									</div>
 									</form>
 									
-									 <!-- <div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div> 
-							 -->
-								<!-- <form id="register" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
-								 -->
+								
 								 <script>
 $(function() {
 	$("#Register").fadeOut(100);

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,10 @@ public class Supplier {
 @Id
 @GeneratedValue
 private int id;
+@NotNull
+private String name;
+@NotNull
+private String address;
 public int getId() {
 	return id;
 }
@@ -32,8 +37,7 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-private String name;
-private String address;
+
 	
 
 }

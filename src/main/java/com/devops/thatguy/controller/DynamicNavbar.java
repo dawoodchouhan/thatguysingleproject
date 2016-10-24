@@ -65,4 +65,18 @@ public class DynamicNavbar {
 		attributes.addFlashAttribute("HideOthers", "true");
 		return "redirect:/Welcome";
 	}
+
+	@RequestMapping("/Aboutus")
+	public ModelAndView Aboutus(HttpSession session) {
+		ModelAndView mv = new ModelAndView("Aboutus");
+	
+		return mv;
+	}
+
+	@RequestMapping("/Contactus")
+	public ModelAndView Contactus(HttpSession session) {
+		ModelAndView mv = new ModelAndView("Contactus");
+
+		return mv;
+	}
 }

@@ -53,7 +53,7 @@ public class AdminProductController {
  
 	@RequestMapping(value = { "product"})
 	public String ProductPage(@ModelAttribute("product") Product product,BindingResult result,  Model model) {
-		//model.addAttribute("product", new Product());
+	
 		model.addAttribute("productList", productDAO.list());
 		model.addAttribute("categoryList",categoryDAO.list());
 		model.addAttribute("supplierList", supplierDAO.list());
@@ -86,12 +86,7 @@ public class AdminProductController {
 	public String editProduct(@PathVariable("id") int id, Model model,RedirectAttributes attributes) {
 		System.out.println("editProduct");
 		attributes.addFlashAttribute("product", this.productDAO.get(id));
-		/*model.addAttribute("product", this.productDAO.get(id));
-		model.addAttribute("productList", productDAO.list());
-		model.addAttribute("categoryList",categoryDAO.list());
-		model.addAttribute("supplierList", supplierDAO.list());
-		model.addAttribute("ProductPageClicked", "true");
-		model.addAttribute("EditProduct", "true");*/
+	
 		return "redirect:/product";
 	}
 

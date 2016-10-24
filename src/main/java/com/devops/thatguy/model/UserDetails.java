@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -14,10 +16,17 @@ public class UserDetails {
 	@Id
 	@GeneratedValue
 	private int userId;
+	@NotNull
 	private String name;
+	@NotNull
 	private String userName;
+	@NotNull
+	@Size(min = 6, max = 14)
 	private String password;
+	@NotNull
+	@Size(min = 8, max = 14)
 	private String mobile;
+	@NotNull
 	private String email;
 	private String role;
     private String enabled;

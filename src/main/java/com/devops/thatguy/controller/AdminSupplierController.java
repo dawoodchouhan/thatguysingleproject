@@ -36,7 +36,7 @@ public class AdminSupplierController {
 
 	@RequestMapping(value = { "supplier" })
 	public String SupplierPage(@ModelAttribute("supplier") Supplier supplier, BindingResult result,Model model) {
-		//model.addAttribute("supplier", new Supplier());
+	
 		model.addAttribute("supplierList", supplierDAO.list());
 		model.addAttribute("SupplierPageClicked", "true");
 		return "Welcome";
@@ -55,10 +55,7 @@ public class AdminSupplierController {
 	public String editSupplier(@PathVariable("id") int id, Model model,RedirectAttributes attributes) {
 		System.out.println("editSupplier");
 		attributes.addFlashAttribute("supplier", this.supplierDAO.get(id));
-	//	model.addAttribute("supplier", this.supplierDAO.get(id));
-	//	model.addAttribute("supplierList", supplierDAO.list());
-	//	model.addAttribute("EditSupplier", "true");
-	//	model.addAttribute("SupplierPageClicked", "true");
+
 		return "redirect:/supplier";
 	}
 

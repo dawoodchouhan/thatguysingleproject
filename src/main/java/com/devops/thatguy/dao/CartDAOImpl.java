@@ -89,7 +89,7 @@ public class CartDAOImpl implements CartDAO {
 		}
 		return null;
 	}
-	@Transactional
+	/*@Transactional
 	public int cartsize(int userId) {
 		Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
 		c.add(Restrictions.eq("userid", userId));
@@ -97,8 +97,18 @@ public class CartDAOImpl implements CartDAO {
 		c.setProjection(Projections.count("userid"));
 		long count=(Long) c.uniqueResult();
 		return (int) count;
-	}
+	}*/
+	
 	@Transactional
+	public long cartsize(int userId) {
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(Cart.class);
+		c.add(Restrictions.eq("userid", userId));
+		c.add(Restrictions.eq("status","C"));
+		c.setProjection(Projections.count("userid"));
+		long count= (Long) c.uniqueResult();
+		return count;
+}
+@Transactional
 	public void pay(int userId) {
 		String hql="update Cart set status='P' where userid="+userId;	
 		@SuppressWarnings("rawtypes")

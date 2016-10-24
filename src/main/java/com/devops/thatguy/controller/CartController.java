@@ -23,6 +23,9 @@ public class CartController {
 	@Autowired
 	private ProductDAO productDAO;
 
+
+	
+	
 	@RequestMapping("addtoCart/{userId}/{id}")
 	public String addToCart(@PathVariable("id") int Productid, @PathVariable("userId") int userId,
 			@RequestParam("quantity") int q, HttpSession session) throws Exception {
@@ -33,7 +36,7 @@ public class CartController {
 			Product p = productDAO.get(item.getProductid());
 			item.setPrice(item.getPrice() + (q * p.getPrice()));
 			cartDAO.saveOrUpdate(item);
-	//		session.setAttribute("cartsize", cartDAO.cartsize((int) session.getAttribute("userId")));
+			session.setAttribute("cartsize", cartDAO.cartsize( (Integer) session.getAttribute("userId")));
 			return "redirect:/view/"+p.getCategoryid();
 		} else {
 			Cart item = new Cart();
@@ -45,9 +48,7 @@ public class CartController {
 			item.setStatus("C");
 			item.setProductid(Productid);
 			cartDAO.saveOrUpdate(item);
-			//session.setAttribute("cartsize", cartDAO.cartsize((int) session.getAttribute("userId")));
-			session.setAttribute("cartsize",cartDAO.cartsize(userId));
-		
+			session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userId")));
 			return "redirect:/view/"+product.getCategoryid();
 		}
 
@@ -60,26 +61,26 @@ public class CartController {
 		cart.setQuantity(q);
 		cart.setPrice(q * p.getPrice());
 		cartDAO.saveOrUpdate(cart);
-//session.setAttribute("cartsize", cartDAO.cartsize((int) session.getAttribute("userId")));
+		session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userId")));
 		return "redirect:/viewcart";
 	}
 
 	@RequestMapping("deleteitem/{id}")
 	public String deleteorder(@PathVariable("id") int id, HttpSession session) {
 		cartDAO.delete(id);
-//		session.setAttribute("cartsize", cartDAO.cartsize((int) session.getAttribute("userId")));
+		session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userId")));
 		return "redirect:/viewcart";
 	}
 
 	@RequestMapping("viewcart")
 	public String viewCart(Model model, HttpSession session) {
-//		int userId = (int) session.getAttribute("userId");
-//		model.addAttribute("CartList", cartDAO.get(userId));
-//		if (cartDAO.cartsize((int) session.getAttribute("userId")) != 0) {
-//			model.addAttribute("CartPrice", cartDAO.CartPrice(userId));
-//		} else {
-//			model.addAttribute("EmptyCart", "true");
-//		}
+		int userId = (Integer) session.getAttribute("userId");
+		model.addAttribute("CartList", cartDAO.get(userId));
+		if (cartDAO.cartsize((Integer) session.getAttribute("userId")) != 0) {
+			model.addAttribute("CartPrice", cartDAO.CartPrice(userId));
+		} else {
+			model.addAttribute("EmptyCart", "true");
+		}
 		model.addAttribute("IfViewCartClicked", "true");
 		model.addAttribute("HideOthers", "true");
 		return "Welcome";
@@ -94,7 +95,7 @@ public class CartController {
 
 	@RequestMapping("Payment")
 	public String payment(HttpSession session) {
-//		cartDAO.pay((int) session.getAttribute("userId"));
+		cartDAO.pay((Integer) session.getAttribute("userId"));
 		return "redirect:/Welcome";
-	}
+}
 }

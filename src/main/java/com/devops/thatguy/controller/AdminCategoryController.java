@@ -36,7 +36,7 @@ public class AdminCategoryController {
 
 	@RequestMapping(value = { "category"})
 	public String CategoryPage(@ModelAttribute("category") Category category,BindingResult result,Model model) {
-		//model.addAttribute("category", new Category());
+		
 		model.addAttribute("categoryList", categoryDAO.list());
 		model.addAttribute("CategoryPageClicked", "true");
 		return "Welcome";
@@ -51,10 +51,7 @@ public class AdminCategoryController {
 	public String editCategory(@PathVariable("id") int id, Model model,RedirectAttributes attributes) {
 		System.out.println("editCategory");
 		attributes.addFlashAttribute("category", this.categoryDAO.get(id));
-		//model.addAttribute("category", this.categoryDAO.get(id));
-		//model.addAttribute("categoryList", categoryDAO.list());
-		//model.addAttribute("CategoryPageClicked", "true");
-		//model.addAttribute("EditCategory", "true");
+	
 		return "redirect:/category";
 	}
 	@RequestMapping(value = { "removecategory/{id}"})

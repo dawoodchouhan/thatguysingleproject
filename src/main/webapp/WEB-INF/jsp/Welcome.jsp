@@ -105,6 +105,10 @@ footer.second {
 				style="opacity: 0.9">
 				<li><a href="Welcome" class="w3-hover-none"><i
 						class="fa fa-home"></i> ThatGuy </a></li>
+						<li><a href="Aboutus" class="w3-hover-none">
+						 AboutUs </a></li>
+						<li><a href="Contactus" class="w3-hover-none">
+					ContactUs </a></li>
 				<c:choose>
 					<c:when test="${LoggedIn}">
 
@@ -137,7 +141,7 @@ footer.second {
 			<c:if test="${!empty categoryList}">
 				<div>
 					<ul
-						class="w3-navbar w3-cyan w3-round w3-small menu w3-card-4 "
+						class="w3-navbar w3-gray w3-round w3-small menu w3-card-4 "
 						Style="width: 70%; margin-left: 15%; margin-top:-2px;">
 						<c:forEach items="${categoryList}" var="category">
 							<li><a href="view/${category.id}" class="w3-hover-none"><i class="fa fa-list-alt" aria-hidden="true"></i> ${category.name}</a></li>
@@ -293,6 +297,11 @@ footer.second {
 		</c:when>
 	</c:choose>
 	<!-- Corousel End -->
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<c:if test="${empty HideOthers}">
 	
 	<div class="class-distributed w3-card-1 w3-white w3-margin-0"></div>
@@ -307,9 +316,9 @@ footer.second {
 						<div class="row w3-card-8 "
 							style="padding-top: 20px; padding-botton: 20px; padding-left: 20px; padding-bottom: 20px;">
 							
-							<div class="text-center col-md-6">
+			<!--  			<div class="text-center col-md-6">
 							
-							<!-- <h3 style="margin-left: 15px">Latest Products</h3> -->
+						
 							<c:forEach items="${productList6}" var="product">
 								<div class="col-xs-2 ">
 									<div class="img">
@@ -319,22 +328,68 @@ footer.second {
 											<p>
 												${product.name}<br> <i class="fa fa-inr"
 													aria-hidden="true"></i> ${product.price}
-												 <%-- <c:choose>
-													<c:when test="${LoggedIn}">
-														<form action="addtoCart/${userId}/${product.id}">
-															<input type="number" value="1" name="quantity"
-																class="btn btn-xs btn-primary   col-xs-6 "> <input
-																type="submit" value="Add"
-																class="btn btn-xs col-xs-6 btn-primary">
-														</form>
-													</c:when>
-												</c:choose> --%>
+												
 											</p>
 
 										</div>
 									</div>
 								</div>
-								</c:forEach>
+								</c:forEach>-->	
+								
+								
+								
+								
+							<div class="row">
+
+
+			<%-- 	<c:forEach items="${products}" var="product"> --%>
+			<%-- onclick="myhref('${contextPath}/productDetail/{{product.product.productId}}')" --%>
+			<c:forEach items="${productList6}" var="product">
+								<div class="col-xs-2 ">
+			
+			
+				<img alt="${product.id}" src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>"
+					class="img-rounded img-thumbnail"
+					alt="${product.name}"
+					title="${product.name }$"
+					style="height: 120px; width: 170px;" />
+					<div class="desc">
+											<p>
+												${product.name}<br> <i class="fa fa-inr"
+													aria-hidden="true"></i></p>
+				<p class="pricePara">
+					<b><span class="fa fa-inr"></span> ${product.price}</b>
+				</p>
+			<c:choose>
+								<c:when test="${LoggedIn}">
+									<form action="addtoCart/${userId}/${product.id}">
+										<input type="number" value="1" name="quantity"
+											class=" form-control  btn-block  "> 
+											<br><input
+											type="submit" value="Add to Cart"
+											class="btn btn-xs btn-danger btn-block">
+									</form>
+								</c:when>
+							</c:choose>
+</div>
+</div>
+</c:forEach>
+</div>
+								
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 								</div>
 						</div>
 						
@@ -344,33 +399,29 @@ footer.second {
 	</c:if>
 </div>
 
-	<footer class="footer-distributed w3-card-4 w3-red w3-margin-0"
-		style="opacity: 0.9">
+	<footer class="footer-distributed w3-card-2 w3-black w3-margin-0"
+		style="opacity: 0.4">
 		<div class="footer-left">
-			<h3>
+			<h4>
 				<b>ThatGuy</b>
-			</h3>
-			<p>
-				<b>8125125125</b><br>Be ThatGuy
-				<br>
-			</p>
+			</h4>
+		
 		</div>
 		<div class="footer-center">
-			<h3>Join us here</h3>
+			Join us here
 			<ul class="social">
-				<li><a href="https://www.facebook.com/"><img
-						src="http://www.w3newbie.com/wp-content/uploads/facebook.png" /></a></li>
-				<li><a href="https://www.youtube.com/"><img
-						src="http://www.w3newbie.com/wp-content/uploads/youtube.png" /></a></li>
-				<li><a href="https://www.twitter.com/"><img
-						src="http://www.w3newbie.com/wp-content/uploads/twitter.png" /></a></li>
+				<a href="https://www.facebook.com/"><img
+						src="http://www.w3newbie.com/wp-content/uploads/facebook.png" /></a>
+				<a href="https://www.youtube.com/"><img
+						src="http://www.w3newbie.com/wp-content/uploads/youtube.png" /></a>
+				<a href="https://www.twitter.com/"><img
+						src="http://www.w3newbie.com/wp-content/uploads/twitter.png" /></a>
 			</ul>
 		</div>
 
 		<div class="footer-right">
 			<p class="footer-company-about">
-				<%-- <img src="<c:url value="/resources/images/corousel/images.jpg"></c:url>"
-					alt="Sony">  --%>
+				
 			<p>
 				ThatGuy <i class="fa fa-copyright" aria-hidden="true">
 					@copyrights reserved</i>

@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,8 +18,12 @@ public class Product {
 @Id
 @GeneratedValue
 private int id;
+@NotNull
 private String name;
+@NotNull
 private String description;
+@NotNull
+
 private long price;
 private int supplierid;
 private int categoryid;

@@ -1,82 +1,32 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<!DOCTYPE html>
+    <%@ page isELIgnored="false"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Payment</title>
-<link href="<c:url value="/resources/css/credit.css" />" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="<c:url value="/resources/css/pay.css" />" rel="stylesheet">
+<title>Payment Details</title>
 </head>
-<body  style="padding-top: 75px">
+<body>
+<div class="pay">.
+<div class="form">
+<h1>Payment</h1>
+<h1>select Payment type </h1>
 
-<div class="container">
-		<div class="row col-xs-4"></div>
-		<div class="col-xs-4">
-     <!-- CREDIT CARD FORM STARTS HERE -->
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<h3 class="panel-title " style="padding-left: 20px">Payment Details</h3>
-							
-						</div>
-					</div>
-					<div class="panel-body">
-						<form action="pay" method="post">
-							<div class="row">
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="cardNumber">Card Number</label>
-										<div class="form-group">
-											<input type="text" class="form-control input-sm" name="cardNumber"
-												placeholder="Valid Card Number" pattern="^[123456789]\d{15}$"
-												title="Enter valid 16 digit number"
-												required /> 
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-7 col-md-7">
-									<div class="form-group">
-										<label for="cardExpiry"><span class="hidden-xs">Expiration</span><span
-											class="visible-xs-inline">EXP</span> DATE</label> <input type="tel"
-											class="form-control input-sm" name="cardExpiry" placeholder="MM / YY"
-											 required />
-									</div>
-								</div>
-								<div class="col-xs-5 col-md-5 pull-right">
-									<div class="form-group">
-										<label for="cardCVC">CVV Code</label> <input type="text" pattern="^[123456789]\d{2}$"  size="3"
-											class="form-control input-sm" name="cardCVC" placeholder="CVV"
-											required />
-									</div>
-								</div>
-							</div>
-							<!-- <div class="row">
-								<div class="col-xs-12">
-									<div class="form-group">
-										<label for="couponCode">Coupon Code</label> <input type="text"
-											class="form-control input-sm" name="couponCode" />
-									</div>
-								</div>
-							</div> -->
-							
-							<div class="row">
-								<div class="col-xs-12">
-								
-									<button class="btn btn-danger btn-sm btn-block" type="submit">Make Payment</button>		
-								
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-				<!-- CREDIT CARD FORM ENDS HERE -->
+<form method="post" action="${flowExecutionUrl}">
+        <input type="hidden" name="_eventId" value="method">
+        <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}" />
+        Cash On Delivery<input type="radio" name="method" value="cod"><br>
+       Credit/Debit Card <input type="radio" name="method" value="card"><br>
+      <button value="Proceed">Proceed</button>
+      <!-- <input type="submit" value="Proceed"> -->
+        </form>
+        </div>
 </div>
-     
-</div> 
 </body>
 </html>

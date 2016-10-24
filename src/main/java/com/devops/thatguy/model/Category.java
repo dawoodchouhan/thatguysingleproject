@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,9 @@ public class Category {
 @Id
 @GeneratedValue
 private int id;
+@NotNull
 private String name;
+@NotNull
 private String description;
 
 	public int getId() {
