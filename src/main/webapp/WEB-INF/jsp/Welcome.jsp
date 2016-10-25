@@ -152,20 +152,27 @@ footer.second {
 			</c:if>	
 		</c:when>	
 				
-				<c:when test="${Administrator}">
+			<c:when test="${Administrator}">
 					<ul
-						class="w3-navbar w3-light-pink w3-round w3-small menu w3-card-4 "
-						Style="width: 70%; margin-left: 15%; margin-top: -2px;">
+						class="w3-navbar w3-light-grey w3-round w3-small menu w3-card-4 "
+						Style="width: 100%;">
+						<!-- 		<li><a href="Report" class="w3-hover-none"><i
+								class="fa fa-cog fa-spin  fa-fw"></i> <span class="sr-only">Loading...</span>
+								Recent Order</a></li> -->
 						<li><a href="product" class="w3-hover-none"><i
-								class="fa fa-list" aria-hidden="true"></i>Product </a></li>
+								class="fa fa-list   fa-fw"></i> <span class="sr-only">Loading...</span>
+								Products</a></li>
 						<li><a href="category" class="w3-hover-none"><i
-								class="fa fa-list" aria-hidden="true"></i> Category</a></li>
+								class="fa fa-list  fa-fw"></i> <span class="sr-only">Loading...</span>
+								Category</a></li>
 						<li><a href="supplier" class="w3-hover-none"><i
-								class="fa fa-list" aria-hidden="true"></i> Supplier</a></li>
+								class="fa fa-list  fa-fw"></i> <span class="sr-only">Loading...</span>
+								Supplier</a></li>
 					</ul>
 				</c:when>
 			</c:choose>
 		</nav>
+			
 	</div>
 	<c:choose>
 		<c:when test="${IfViewCartClicked}">
@@ -399,7 +406,7 @@ footer.second {
 	</c:if>
 </div>
 
-	<footer class="footer-distributed w3-card-2 w3-black w3-margin-0"
+<footer class="footer-distributed w3-card-2 w3-black w3-margin-0"
 		style="opacity: 0.4">
 		<div class="footer-left">
 			<h4>
@@ -418,6 +425,7 @@ footer.second {
 						src="http://www.w3newbie.com/wp-content/uploads/twitter.png" /></a>
 			</ul>
 		</div>
+		
 
 		<div class="footer-right">
 			<p class="footer-company-about">
@@ -426,9 +434,26 @@ footer.second {
 				ThatGuy <i class="fa fa-copyright" aria-hidden="true">
 					@copyrights reserved</i>
 			</p>
+			  <ul class="bank_list">
+                    <div class="bank_item"><a href="#" class="bank_link"><img alt="" src="resources/i/visa.svg" class="bank_i"/></a></div>
+                    <div class="bank_item"><a href="#" class="bank_link"><img alt="" src="resources/i/mastercard.svg" class="bank_i"/></a></div>
+                    <div class="bank_item"><a href="#" class="bank_link"><img alt="" src="resources/i/paypal.svg" class="bank_i"/></a></div>
+                  </ul>
+			
 
 		</div>
-	</footer>
+	</footer> 
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
 	<script>
 		$(document).ready(function() {
 			// Activate Carousel

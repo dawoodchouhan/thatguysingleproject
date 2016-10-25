@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Login/Register</title>
 <style>
 body { 
 background:url('http://www.fondsecran.eu/pictures/2015/0908/1/blurred-greenish-background-4k-wallpapers-234758.jpg');
@@ -35,6 +35,7 @@ font-family: 'Ubuntu', sans-serif;
 <script src="js/index.js"></script>
 	</head>
 <body>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -53,6 +54,8 @@ font-family: 'Ubuntu', sans-serif;
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
+							<h3>Hey member</h3>
+							<p>We are happy to see you again</p>
 								<form id="login" action="perform_login" method="post"
 									 style="display: block;">
 									<div class="form-group">
@@ -101,6 +104,7 @@ $(function() {
 </script>
 		 
 								<c:url var="addAction" value="adduser"></c:url>
+								<h4>Join Our Family</h4>
 					
 								<form:form id="Register" action="${addAction}" commandName="userDetails"
 									method="post">
@@ -138,6 +142,7 @@ $(function() {
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" id="Register" value="Register" tabindex="4"
 													class="form-control btn btn-register" value="Register Now">
+													<p class="message">Already a member? <a href="logins">Log in</a></p>
 											</div>
 										</div>
 									</div>

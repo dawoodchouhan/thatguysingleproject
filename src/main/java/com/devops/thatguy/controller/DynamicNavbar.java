@@ -52,8 +52,6 @@ public class DynamicNavbar {
 		attributes.addFlashAttribute("productList",productDAO.getcatitem(categoryid));
 		attributes.addFlashAttribute("ViewCategoryClicked", "true");
 		attributes.addFlashAttribute("HideOthers","true");
-		/*mv.addAttribute("productList",productDAO.getcatitem(categoryid));
-		mv.addAttribute("ViewCategoryClicked", "true");*/
 		return "redirect:/Welcome";
 	}
 

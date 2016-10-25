@@ -87,9 +87,10 @@ public class LoginController {
 		  
 		     if (authority.getAuthority().equals(role)) 
 		     {
+		    	
+
 		    	 session.setAttribute("UserLoggedIn", "true");
-		    	// session.setAttribute("cartsize",cartDAO.cartsize((int)session.getAttribute("userId")));
-		    	// session.setAttribute("cartsize",cartDAO.cartsize((int) session.getAttribute("userid")));
+		    	 session.setAttribute("cartsize",cartDAO.cartsize((Integer)session.getAttribute("userId")));
 		     }
 		     else 
 		     {
@@ -103,10 +104,11 @@ public class LoginController {
 		return "Welcome";
 	}
 
-	
 	@RequestMapping(value="pay")
 	public String pay(HttpSession session)
 	{
+		cartDAO.pay(((Integer)session.getAttribute("userId")));
+		session.setAttribute("cartsize",cartDAO.cartsize((Integer)session.getAttribute("userId")));
 		return "redirect:/Welcome";
-	}
+}
 }

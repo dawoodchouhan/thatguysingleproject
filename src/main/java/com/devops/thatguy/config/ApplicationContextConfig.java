@@ -18,15 +18,22 @@ import com.devops.thatguy.dao.CartDAO;
 import com.devops.thatguy.dao.CartDAOImpl;
 import com.devops.thatguy.dao.CategoryDAO;
 import com.devops.thatguy.dao.CategoryDAOImpl;
+
 import com.devops.thatguy.dao.ProductDAO;
 import com.devops.thatguy.dao.ProductDAOImpl;
 import com.devops.thatguy.dao.SupplierDAO;
 import com.devops.thatguy.dao.SupplierDAOImpl;
 import com.devops.thatguy.dao.UserDetailsDAO;
 import com.devops.thatguy.dao.UserDetailsDAOImpl;
+import com.devops.thatguy.model.BillingAddress;
+import com.devops.thatguy.model.CardDetail;
 import com.devops.thatguy.model.Cart;
 import com.devops.thatguy.model.Category;
+
+import com.devops.thatguy.model.OrderDetail;
+import com.devops.thatguy.model.OrderedItems;
 import com.devops.thatguy.model.Product;
+import com.devops.thatguy.model.ShippingAddress;
 import com.devops.thatguy.model.Supplier;
 import com.devops.thatguy.model.UserDetails;
 
@@ -67,8 +74,13 @@ sessionBuilder.addAnnotatedClasses(Category.class);
 sessionBuilder.addAnnotatedClasses(UserDetails.class);
 sessionBuilder.addAnnotatedClasses(Supplier.class);
 sessionBuilder.addAnnotatedClasses(Cart.class);
-//sessionBuilder.addAnnotatedClasses(CartItem.class);
+
 sessionBuilder.addAnnotatedClasses(Product.class);
+sessionBuilder.addAnnotatedClass(OrderDetail.class);
+sessionBuilder.addAnnotatedClass(OrderedItems.class);
+sessionBuilder.addAnnotatedClass(CardDetail.class);
+sessionBuilder.addAnnotatedClass(ShippingAddress.class);
+sessionBuilder.addAnnotatedClass(BillingAddress.class);
 return sessionBuilder.buildSessionFactory();
 }
 @Autowired
@@ -104,4 +116,5 @@ public HibernateTransactionManager getTransactionManager(SessionFactory sessionF
 	public CartDAO getCartDAO(SessionFactory sessionFactory) {
 			return new CartDAOImpl(sessionFactory);
 	}
+
 }
