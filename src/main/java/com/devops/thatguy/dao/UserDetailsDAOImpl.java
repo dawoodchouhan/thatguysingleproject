@@ -77,23 +77,6 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 			return true;
 		}
 	}
-	
-	/*@SuppressWarnings("rawtypes")
-	@Transactional
-	public boolean isValidUser(String userName, String password) {
-		String hql="from"+  "UserDetails"  +  "where userName=" +"'"+ userName + "'"+ "and password ="+"'"+ password + "'";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		@SuppressWarnings("unchecked")
-		List<UserDetails> list = (List<UserDetails>) query.list();
-		if(list==null || list.isEmpty())
-		{
-			return false;
-		}
-		else
-		{
-			return true;
-		}
-	}*/
 
 	@Transactional
 	public UserDetails get(String userName) {
@@ -110,5 +93,25 @@ public class UserDetailsDAOImpl implements UserDetailsDAO {
 			return null;
 		}
 	}
+	
+
+	@Transactional
+	public UserDetails getUserDetailsByUserName(String userName) {
+		String hql = "from UserDetails where userName=" + "'" + userName + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(UserDetails.class);
+		c.add(Restrictions.eq("userName",userName));
+		@SuppressWarnings("unchecked")
+		List<UserDetails> listUser = (List<UserDetails>) c.list();
+		
+		if (listUser != null && !listUser.isEmpty()) {
+			return listUser.get(0);
+		}
+		else {
+			return null;
+		}
+	}
+	
 
 }

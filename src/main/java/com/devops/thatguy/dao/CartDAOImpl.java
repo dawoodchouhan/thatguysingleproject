@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.devops.thatguy.model.Cart;
 
+import com.devops.thatguy.model.UserDetails;
+
 
 
 @SuppressWarnings("deprecation")
@@ -124,4 +126,25 @@ public class CartDAOImpl implements CartDAO {
 		List<Cart> list = (List<Cart>)query.list();
 		return list;
 	}
+	
+	
+	
+	@Transactional
+	public UserDetails getCartByUserId(String userId) {
+		String hql = "from Cart where userId=" + "'" + userId + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+
+		Criteria c=sessionFactory.getCurrentSession().createCriteria(UserDetails.class);
+		c.add(Restrictions.eq("userId",userId));
+		@SuppressWarnings("unchecked")
+		List<UserDetails> listUserDetails = (List<UserDetails>) c.list();
+		
+		if (listUserDetails != null && !listUserDetails.isEmpty()) {
+			return listUserDetails.get(0);
+		}
+		else {
+			return null;
+		}
+	}
+
 }

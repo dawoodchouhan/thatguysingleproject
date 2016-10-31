@@ -19,7 +19,7 @@ public class BillingAddress implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String billingAddressId;
-	private String customerId;
+	private String UserId;
 	@NotBlank(message="Specify main address")
 	private String line1;
 	@NotBlank
@@ -43,12 +43,14 @@ public class BillingAddress implements Serializable{
 		this.billingAddressId = billingAddressId;
 	}
 
-	public String getCustomerId() {
-		return customerId;
+	
+
+	public String getUserId() {
+		return UserId;
 	}
 
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
+	public void setUserId(String userId) {
+		UserId = userId;
 	}
 
 	public String getLine1() {

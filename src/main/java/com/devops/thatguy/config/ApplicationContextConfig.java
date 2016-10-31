@@ -30,8 +30,8 @@ import com.devops.thatguy.model.CardDetail;
 import com.devops.thatguy.model.Cart;
 import com.devops.thatguy.model.Category;
 
-import com.devops.thatguy.model.OrderDetail;
-import com.devops.thatguy.model.OrderedItems;
+import com.devops.thatguy.model.Order;
+
 import com.devops.thatguy.model.Product;
 import com.devops.thatguy.model.ShippingAddress;
 import com.devops.thatguy.model.Supplier;
@@ -76,8 +76,8 @@ sessionBuilder.addAnnotatedClasses(Supplier.class);
 sessionBuilder.addAnnotatedClasses(Cart.class);
 
 sessionBuilder.addAnnotatedClasses(Product.class);
-sessionBuilder.addAnnotatedClass(OrderDetail.class);
-sessionBuilder.addAnnotatedClass(OrderedItems.class);
+sessionBuilder.addAnnotatedClass(Order.class);
+
 sessionBuilder.addAnnotatedClass(CardDetail.class);
 sessionBuilder.addAnnotatedClass(ShippingAddress.class);
 sessionBuilder.addAnnotatedClass(BillingAddress.class);

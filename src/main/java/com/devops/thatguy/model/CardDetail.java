@@ -18,7 +18,7 @@ public class CardDetail implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String cardDetailId;
-	private String customerId;
+
 	@NotBlank(message="Card number must be entered")
 	private String cardNumber;
 	@NotBlank(message="Expiry month must be selected")
@@ -87,14 +87,7 @@ public class CardDetail implements Serializable{
 		this.totalCost = totalCost;
 	}
 
-	public String getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(String customerId) {
-		this.customerId = customerId;
-	}
-
+	
 	public CardDetail() {
 
 		this.cardDetailId = "CARD" + UUID.randomUUID().toString().substring(24).toUpperCase();

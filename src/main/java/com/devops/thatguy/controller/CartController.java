@@ -1,17 +1,25 @@
 package com.devops.thatguy.controller;
 
+import java.security.Principal;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.devops.thatguy.dao.CartDAO;
 import com.devops.thatguy.dao.ProductDAO;
+import com.devops.thatguy.dao.UserDetailsDAO;
 import com.devops.thatguy.model.Cart;
+
 import com.devops.thatguy.model.Product;
+import com.devops.thatguy.model.UserDetails;
 
 
 @Controller
@@ -19,6 +27,7 @@ public class CartController {
 
 	@Autowired
 	private CartDAO cartDAO;
+	
 
 	@Autowired
 	private ProductDAO productDAO;
@@ -85,7 +94,44 @@ public class CartController {
 		model.addAttribute("HideOthers", "true");
 		return "Welcome";
 	}
+//To view History of the items bought
+	
+	/*@RequestMapping(value="/view/orderedItems",method=RequestMethod.GET)
+	public List<OrderedItems> listOfOrderedItems(Principal principal){
+		List<OrderedItems> listofOrderedItems =  cartDAO.listOrderedItems(userDetailsDAO.getUserDetailsByUserName
+				(principal.getName()).getUserId());
+		if(listofOrderedItems!=null&&!listofOrderedItems.isEmpty())
+		{
+			return listofOrderedItems;
+		}
+		return null;
+	}
 
+	
+	// To get the listOf ordered items
+		@RequestMapping("/user/cart/history")
+		public ModelAndView listOrderedItems(Principal principal, Model model) {
+			ModelAndView mv = new ModelAndView("index");
+			mv.addObject("isViewHistoryclicked", "true");
+			userDetails = userDetailsDAO.getUserDetailsByUserName(principal.getName());
+
+			List<OrderedItems> listofOrderedItems = cartDAO.listOrderedItems(UserDetails.getUserId());
+			if (listofOrderedItems != null && !listofOrderedItems.isEmpty()) {
+				model.addAttribute("listOfOrderedItems", listofOrderedItems);
+			} else {
+				model.addAttribute("noProductsinHistory", "No products ordered till now");
+			}
+			mv.addObject("activeNavMenu", "viewCart");
+			return mv;
+
+	}
+	*/
+	
+	
+	
+	
+	
+	
 	@RequestMapping("placeorder")
 	public String placeorder(Model model) {
 		model.addAttribute("IfPaymentClicked", "true");

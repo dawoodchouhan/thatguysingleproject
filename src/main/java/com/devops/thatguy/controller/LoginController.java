@@ -50,8 +50,7 @@ public class LoginController {
 	@RequestMapping(value = "Register")
 	public String DisplayRegister(Model mv) {
 		mv.addAttribute("userDetails", new UserDetails());
-/*		mv.addAttribute("categoryList", categoryDAO.list());
-		mv.addAttribute("productList", productDAO.list());*/
+
 		mv.addAttribute("IfRegisterClicked", "true");
 		mv.addAttribute("HideOthers","true");
 		mv.addAttribute("HideOthers","true");
