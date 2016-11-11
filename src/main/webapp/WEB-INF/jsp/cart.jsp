@@ -31,15 +31,15 @@
 							<div class="panel-title">
 								<div class="row">
 									<div class="col-xs-6">
-										<h5 style="color: white">
+										<h4 style="color: white">
 											<span class="glyphicon glyphicon-shopping-cart"></span>
-											Shopping Cart
-										</h5>
+											Your Cart
+										</h4>
 									</div>
 									<div class="col-xs-3"></div>
 									<div class="col-xs-3">
 										<h5 style="color: white">
-											<a href="#" class="btn btn-success btn-block ">Previous
+											<a href="#" class="btn btn-success btn-block ">your
 												Orders</a>
 										</h5>
 									</div>
@@ -92,9 +92,7 @@
 											<label><font size="5">${cart.productname}</font></label>
 										</div>
 										</div>
-										<%-- <div class="col-xs-2">
-								<input type="text" class="form-control input-sm" value="${cart.quantity}">
-						</div> --%>
+									
 										<div class="col-xs-2 text-right" style="padding-top: 22px">
 											<label><font size="4">Rs.${cart.price}</font></label>
 										</div>
@@ -125,8 +123,7 @@
 						<div class="panel-footer">
 							<div class="row text-center">
 								<div class="col-xs-3">
-									<a href="Welcomepage" class="btn btn-primary btn-sm btn-block">Continue
-										Shopping</a>
+									<a href="Welcomepage" class="btn btn-primary btn-sm btn-block">Shop More</a>
 								</div>
 								<c:if test="${empty EmptyCart}">
 								<div class="col-xs-6">
@@ -135,7 +132,7 @@
 								<form action="placeorder">
 								
 									<div class="col-xs-3">
-										  <a href="checkoutFlow" type="submit" class="btn btn-success btn-block">
+										  <a href="tqpage" type="submit" class="btn btn-success btn-block">
 											Checkout</a>
 									</div>
 									

@@ -13,33 +13,7 @@
 
 </head>
 <body style="padding-top: 60px">
-	<!-- <div class="container"> -->
-	<%-- <c:forEach items="${productList}" var="product">
-								<div class="col-xs-2 ">
-									<div class="thumbnail">
-										<img height="192px" width="192px" alt="${product.id}"
-											src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
-										<div class="desc">
-											<p>
-												${product.name}
-												<c:choose>
-													<c:when test="${LoggedIn}">
-														<form action="addtoCart/${userId}/${product.id}">
-															<input type="number" value="1" name="quantity"
-																class="btn btn-xs btn-primary   col-xs-6 "> <input
-																type="submit" value="Add"
-																class="btn btn-xs col-xs-6 btn-primary">
-														</form>
-													</c:when>
-												</c:choose>
-											</p>
 
-										</div>
-									</div>
-								</div>
-							</c:forEach>
-							</div>
-							 --%>
 	<div class="container">
 		<c:forEach items="${productList}" var="product">
 			<div class="col-xs-3 ">

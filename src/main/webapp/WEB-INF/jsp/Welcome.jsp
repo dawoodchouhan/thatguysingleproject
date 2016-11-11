@@ -36,7 +36,7 @@ li {
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 70%;
+	width: 85%;
 	margin: 0 auto;
 }
 
@@ -99,43 +99,8 @@ footer.second {
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="w3-top">
-		<nav>
-			<ul class="w3-navbar w3-red w3-card-2 w3-medium "
-				style="opacity: 0.9">
-				<li><a href="Welcome" class="w3-hover-none"><i
-						class="fa fa-home"></i> ThatGuy </a></li>
-						<li><a href="Aboutus" class="w3-hover-none">
-						 AboutUs </a></li>
-						<li><a href="Contactus" class="w3-hover-none">
-					ContactUs </a></li>
-				<c:choose>
-					<c:when test="${LoggedIn}">
-
-						<li style="float: right"><a href="perform_logout"
-							class="w3-hover-none"><i class="fa fa-sign-out"></i></a></li>
-						<c:choose>
-							<c:when test="${!Administrator}">
-								<li style="float: right"><a href="viewcart"
-									class="w3-hover-none"><i class="fa fa-shopping-cart"></i>(${cartsize})</a></li>
-							</c:when>
-						</c:choose>
-
-						<li style="float: right"><a href="#" class="w3-hover-none"><i
-								class="fa fa-user"></i> Hi, ${name}</a></li>
-					</c:when>
-
-					<c:otherwise>
-						<!-- <li style="float: right"><a href="Register"
-							class="w3-hover-none"><i class="fa fa-user-plus"></i></a></li> -->
-						<li style="float: right"><a href="login"
-							class="w3-hover-none"><i class="fa fa-sign-in"></i></a></li>
-					</c:otherwise>
-				</c:choose>
-			</ul>
-
-	
-			<c:choose>	
+<%@ include file="header.jsp" %>
+<c:choose>	
 		<c:when test="${!Administrator}">	
 			<!-- Category List -->
 			<c:if test="${!empty categoryList}">
@@ -156,9 +121,7 @@ footer.second {
 					<ul
 						class="w3-navbar w3-light-grey w3-round w3-small menu w3-card-4 "
 						Style="width: 100%;">
-						<!-- 		<li><a href="Report" class="w3-hover-none"><i
-								class="fa fa-cog fa-spin  fa-fw"></i> <span class="sr-only">Loading...</span>
-								Recent Order</a></li> -->
+						
 						<li><a href="product" class="w3-hover-none"><i
 								class="fa fa-list   fa-fw"></i> <span class="sr-only">Loading...</span>
 								Products</a></li>
@@ -234,8 +197,7 @@ footer.second {
 							<li class="item2"></li>
 							<li class="item3"></li>
 							<li class="item4"></li>
-							<li class="item5"></li>
-							<li class="item6"></li>
+						
 						</ol>
 						<!-- Wrapper for slides -->
 						<div class="carousel-inner" role="listbox">
@@ -271,22 +233,8 @@ footer.second {
 									<span></span>
 								</div>
 							</div>
-							<div class="item">
-								<img
-									src="<c:url value="F:/DevOps/DeVops Project/ThatGuy/src/main/webapp/resources/images/corousel/belt.jpeg"></c:url>"
-									alt="Belt">
-								<div class="carousel-caption">
-									<span></span>
-								</div>
-							</div>
-							<div class="item">
-								<img
-									src="<c:url value="F:/DevOps/DeVops Project/ThatGuy/src/main/webapp/resources/images/corousel/tie.jpeg"></c:url>"
-									alt="Tie">
-								<div class="carousel-caption">
-									<span></span>
-								</div>
-							</div>
+							
+						
 						</div>
 						<!-- Controls -->
 						<a class="left carousel-control" role="button"
@@ -309,7 +257,9 @@ footer.second {
 	<br>
 	<br>
 	<br>
-	<c:if test="${empty HideOthers}">
+	
+	<%@ include file="prod.jsp" %>
+<!--  <c:if test="${empty HideOthers}">
 	
 	<div class="class-distributed w3-card-1 w3-white w3-margin-0"></div>
 		<div class="row  w1-red " style="padding-left: 40px; opacity: 0.1">
@@ -319,59 +269,33 @@ footer.second {
 			<c:when test="${!Administrator}">
 				<c:if test="${!empty productList6}">
 					<div>
-						<!-- <ul> -->
+						
 						<div class="row w3-card-8 "
 							style="padding-top: 20px; padding-botton: 20px; padding-left: 20px; padding-bottom: 20px;">
 							
-			<!--  			<div class="text-center col-md-6">
-							
-						
-							<c:forEach items="${productList6}" var="product">
-								<div class="col-xs-2 ">
-									<div class="img">
-										<img height="192px" width="192px" alt="${product.id}"
-											src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
-										<div class="desc">
-											<p>
-												${product.name}<br> <i class="fa fa-inr"
-													aria-hidden="true"></i> ${product.price}
-												
-											</p>
-
-										</div>
-									</div>
-								</div>
-								</c:forEach>-->	
-								
-								
-								
-								
-							<div class="row">
+			<div class="row">
 
 
-			<%-- 	<c:forEach items="${products}" var="product"> --%>
-			<%-- onclick="myhref('${contextPath}/productDetail/{{product.product.productId}}')" --%>
-			<c:forEach items="${productList6}" var="product">
-								<div class="col-xs-2 ">
-			
-			
-				<img alt="${product.id}" src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>"
+		
+<c:forEach items="${productList6}" var="product">
+<div class="col-xs-2 ">
+<img alt="${product.id}" src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>"
 					class="img-rounded img-thumbnail"
 					alt="${product.name}"
-					title="${product.name }$"
+					title="${product.name }"
 					style="height: 120px; width: 170px;" />
 					<div class="desc">
-											<p>
-												${product.name}<br> <i class="fa fa-inr"
-													aria-hidden="true"></i></p>
+<div width: 320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0; ><p>${product.name}<br> </p>
 				<p class="pricePara">
 					<b><span class="fa fa-inr"></span> ${product.price}</b>
-				</p>
+				</p></div>
 			<c:choose>
 								<c:when test="${LoggedIn}">
 									<form action="addtoCart/${userId}/${product.id}">
-										<input type="number" value="1" name="quantity"
-											class=" form-control  btn-block  "> 
+								
 											<br><input
 											type="submit" value="Add to Cart"
 											class="btn btn-xs btn-danger btn-block">
@@ -382,29 +306,13 @@ footer.second {
 </div>
 </c:forEach>
 </div>
-								
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-								</div>
-						</div>
-						
-				</c:if>
-			</c:when>
-		</c:choose>
-	</c:if>
 </div>
+</div>
+</c:if>
+</c:when>
+</c:choose>
+</c:if>
+</div>-->	
 
 <footer class="footer-distributed w3-card-2 w3-black w3-margin-0"
 		style="opacity: 0.4">

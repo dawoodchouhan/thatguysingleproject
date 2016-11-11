@@ -73,11 +73,8 @@
 								<td><form:input class="form-control" path="id"
 										readonly="true" /></td>
 							</c:when>
-							<%-- <c:otherwise>
-								<td><form:input class="form-control" path="id"
-										pattern=".{2,10}" required="true"
-										title="id should contains 2 to 10 characters" /></td>
-							</c:otherwise> --%>
+							
+						
 						</c:choose>
 					<tr>
 						<td><form:label class="" path="name">
@@ -157,7 +154,7 @@
 			<table class="w3-table w3-bordered w3-striped w3-card-4">
 					<thead>
 						<tr >
-						<tr class="w3-blue">
+						<tr class="w3-black">
 							<th>Product ID</th>
 							<th>Product Name</th>
 							<th>Product Description</th>

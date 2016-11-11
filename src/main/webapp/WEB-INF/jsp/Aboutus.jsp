@@ -67,41 +67,8 @@ height:450px;
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="w3-top">
-		<nav>
-			<ul class="w3-navbar w3-red w3-card-2 w3-medium "
-				style="opacity: 0.9">
-				<li><a href="Welcome" class="w3-hover-none"><i
-						class="fa fa-home"></i> ThatGuy </a></li>
-						<li><a href="Aboutus" class="w3-hover-none">
-						 AboutUs </a></li>
-						<li><a href="Contactus" class="w3-hover-none">
-					ContactUs </a></li>
-				<c:choose>
-					<c:when test="${LoggedIn}">
-
-						<li style="float: right"><a href="perform_logout"
-							class="w3-hover-none"><i class="fa fa-sign-out"></i></a></li>
-						<c:choose>
-							<c:when test="${!Administrator}">
-								<li style="float: right"><a href="viewcart"
-									class="w3-hover-none"><i class="fa fa-shopping-cart"></i>(${cartsize})</a></li>
-							</c:when>
-						</c:choose>
-
-						<li style="float: right"><a href="#" class="w3-hover-none"><i
-								class="fa fa-user"></i> Hi, ${name}</a></li>
-					</c:when>
-
-					<c:otherwise>
-						<!-- <li style="float: right"><a href="Register"
-							class="w3-hover-none"><i class="fa fa-user-plus"></i></a></li> -->
-						<li style="float: right"><a href="login"
-							class="w3-hover-none"><i class="fa fa-sign-in"></i></a></li>
-					</c:otherwise>
-				</c:choose>
-			</ul>
-
+	
+<%@ include file="header.jsp" %>
 	
 
 
@@ -126,7 +93,13 @@ height:450px;
     <div id="menu2" class="tab-pane fade">
       <h2><em>MD Dawood Ibrahim</em>,Founder</h2>
       <h3>The creater of <strong><em>ThatGuy</em></strong> which is completely for guys. </h3>
-     </div>
+     
+  <div style="text-align: left"><img style="display: inline; float: right" align="right" src="https://lh5.googleusercontent.com/-78c4gfPNnk4/AAAAAAAAAAI/AAAAAAAAkJg/4wW_LDo3GIg/photo.jpgE" width="200" height="200" /></div>
+
+
+</div>
+
+
      
   </div>
   </div>

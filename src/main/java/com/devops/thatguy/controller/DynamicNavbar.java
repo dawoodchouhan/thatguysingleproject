@@ -77,4 +77,10 @@ public class DynamicNavbar {
 
 		return mv;
 	}
+	@RequestMapping("/tqpage")
+	public ModelAndView Tqpage(HttpSession session) {
+		ModelAndView mv = new ModelAndView("tqpage");
+	
+		return mv;
+	}
 }
