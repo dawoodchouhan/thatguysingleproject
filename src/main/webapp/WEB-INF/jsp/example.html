@@ -1,0 +1,199 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+.product-filter {
+  display: flex;
+}
+.product-filter h1 {
+  flex-grow: 1;
+}
+.sort {
+  display: flex;
+}
+.collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+
+  display: flex; /* so child elements can use flexbox stuff too! */
+}
+
+.product-card {
+  flex: 1 16%;
+}
+.product-image img {
+  max-width: 100%;
+}
+
+.product-info {
+  margin-top: auto;
+}
+
+@media (max-width: 920px) {
+  .product-card {
+    flex: 1 21%;
+  }
+}
+
+/* Select the first two */
+.products .product-card:first-child, 
+.products .product-card:nth-child(2) {
+  flex: 2 46%;
+}
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 46%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-filter {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .product-filter {
+    flex-direction: column;
+  }
+  .sort {
+    align-self: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="product-filter">
+
+  <h1>Jackets</h1>
+
+  <div class="sort">
+
+    <div class="collection-sort">
+      <label>Filter by:</label>
+      <select>
+        <option value="/">All Jackets</option>
+      </select>
+    </div>
+
+    <div class="collection-sort">
+      <label>Sort by:</label>
+      <select>
+        <option value="/">Featured</option>
+      </select>
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- product layout -->
+
+<section class="products">
+
+  <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+
+  <!-- more products -->
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+  
+   <div class="product-card">
+    <div class="product-image">
+      <img src="https://static.toryburch.com/static/on/demandware.static/-/Sites/default/dw2528339a/slots/watches/WATCHES_BANNER_DETAILS_012616_MOBILE.jpg">
+    </div>
+    <div class="product-info">
+      <h5>Winter Jacket</h5>
+      <h6>$99.99</h6>
+    </div>
+  </div>
+
+</section>
+</body>
+</html>

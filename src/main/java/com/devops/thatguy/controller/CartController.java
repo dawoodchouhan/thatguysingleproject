@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.devops.thatguy.dao.CartDAO;
 import com.devops.thatguy.dao.ProductDAO;
 import com.devops.thatguy.dao.UserDetailsDAO;
+import com.devops.thatguy.model.BillingAddress;
 import com.devops.thatguy.model.Cart;
 
 import com.devops.thatguy.model.Product;
@@ -129,7 +131,11 @@ public class CartController {
 	
 	
 	
-	
+	@RequestMapping(value="/viewcart/checkout")
+	public ModelAndView goToBillingAddress(@ModelAttribute("billingAddress") BillingAddress billingAddress) {
+		ModelAndView modelAndView = new ModelAndView("redirect:/checkout");
+		return modelAndView;
+	}
 	
 	
 	@RequestMapping("placeorder")

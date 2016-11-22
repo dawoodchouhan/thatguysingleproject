@@ -1,108 +1,71 @@
 package com.devops.thatguy.model;
 
 import java.io.Serializable;
-import java.util.UUID;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
-
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
-@Entity
-@Table
 @Component
 public class BillingAddress implements Serializable{
 	
+	
 	private static final long serialVersionUID = 1L;
-	@Id
-	private String billingAddressId;
-	private String UserId;
-	@NotBlank(message="Specify main address")
-	private String line1;
-	@NotBlank
-	private String line2;
-
-	@NotBlank(message="Specify city")
-	private String city;
-	@NotBlank(message="Specify state")
-	private String state;
-	@NotBlank(message="Specify country")
-	private String country;
-	@NotBlank(message="Specify zipcode")
-	@Pattern(regexp="^[1-9][0-9]{5}$",message="Enter a valid zip code")
-	private String zipCode;
-
-	public String getBillingAddressId() {
+	private int billingAddressId ;
+	private String userId ;
+	private String fullName ;
+	private String addressLine ;
+	private String city_Town ;
+	private String state_Province_RegionNumber ;
+	private String zip_PostalCode ;
+	private String country ;
+	
+	public int getBillingAddressId() {
 		return billingAddressId;
 	}
-
-	public void setBillingAddressId(String billingAddressId) {
+	public void setBillingAddressId(int billingAddressId) {
 		this.billingAddressId = billingAddressId;
 	}
-
 	
-
 	public String getUserId() {
-		return UserId;
+		return userId;
 	}
-
 	public void setUserId(String userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
-
-	public String getLine1() {
-		return line1;
+	public String getFullName() {
+		return fullName;
 	}
-
-	public void setLine1(String line1) {
-		this.line1 = line1;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
-
-	public String getLine2() {
-		return line2;
+	public String getAddressLine() {
+		return addressLine;
 	}
-
-	public void setLine2(String line2) {
-		this.line2 = line2;
+	public void setAddressLine(String addressLine) {
+		this.addressLine = addressLine;
 	}
-
-	public String getCity() {
-		return city;
+	public String getCity_Town() {
+		return city_Town;
 	}
-
-	public void setCity(String city) {
-		this.city = city;
+	public void setCity_Town(String city_Town) {
+		this.city_Town = city_Town;
 	}
-
-	public String getState() {
-		return state;
+	public String getState_Province_RegionNumber() {
+		return state_Province_RegionNumber;
 	}
-
-	public void setState(String state) {
-		this.state = state;
+	public void setState_Province_RegionNumber(String state_Province_RegionNumber) {
+		this.state_Province_RegionNumber = state_Province_RegionNumber;
 	}
-
+	public String getZip_PostalCode() {
+		return zip_PostalCode;
+	}
+	public void setZip_PostalCode(String zip_PostalCode) {
+		this.zip_PostalCode = zip_PostalCode;
+	}
 	public String getCountry() {
 		return country;
 	}
-
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
-	public String getZipCode() {
-		return zipCode;
-	}
-
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
-	}
-
-	public BillingAddress() {
-		this.billingAddressId = "BILL" + UUID.randomUUID().toString().substring(24).toUpperCase();
-	}
-
+	
 }

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devops.thatguy.model.CardDetail;
+import com.devops.thatguy.model.CardDetails;
 
 
 
@@ -20,7 +20,7 @@ public class CardDetailDAOImpl implements CardDetailDAO {
 	}
 	
 	@Transactional
-	public void saveOrUpdate(CardDetail cardDetail) {
+	public void saveOrUpdate(CardDetails cardDetail) {
 	sessionFactory.getCurrentSession().saveOrUpdate(cardDetail);
 
 	}

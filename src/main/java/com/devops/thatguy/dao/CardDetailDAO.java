@@ -1,7 +1,7 @@
 package com.devops.thatguy.dao;
 
-import com.devops.thatguy.model.CardDetail;
+import com.devops.thatguy.model.CardDetails;
 
 public interface CardDetailDAO {
-	void saveOrUpdate(CardDetail cardDetail);
+	void saveOrUpdate(CardDetails cardDetail);
 }

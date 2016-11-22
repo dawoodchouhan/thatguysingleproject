@@ -132,8 +132,8 @@
 								<form action="placeorder">
 								
 									<div class="col-xs-3">
-										  <a href="tqpage" type="submit" class="btn btn-success btn-block">
-											Checkout</a>
+										 <a class="btn btn-md btn-success" style="text-decoration: none"
+							href="/viewcart/checkout">Checkout</a>
 									</div>
 									
 								</form>

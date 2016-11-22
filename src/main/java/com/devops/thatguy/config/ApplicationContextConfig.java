@@ -26,11 +26,10 @@ import com.devops.thatguy.dao.SupplierDAOImpl;
 import com.devops.thatguy.dao.UserDetailsDAO;
 import com.devops.thatguy.dao.UserDetailsDAOImpl;
 import com.devops.thatguy.model.BillingAddress;
-import com.devops.thatguy.model.CardDetail;
+import com.devops.thatguy.model.CardDetails;
 import com.devops.thatguy.model.Cart;
 import com.devops.thatguy.model.Category;
-
-
+import com.devops.thatguy.model.Order;
 import com.devops.thatguy.model.Product;
 import com.devops.thatguy.model.ShippingAddress;
 import com.devops.thatguy.model.Supplier;
@@ -75,11 +74,10 @@ sessionBuilder.addAnnotatedClasses(Supplier.class);
 sessionBuilder.addAnnotatedClasses(Cart.class);
 
 sessionBuilder.addAnnotatedClasses(Product.class);
-
-
-sessionBuilder.addAnnotatedClass(CardDetail.class);
-sessionBuilder.addAnnotatedClass(ShippingAddress.class);
 sessionBuilder.addAnnotatedClass(BillingAddress.class);
+sessionBuilder.addAnnotatedClass(ShippingAddress.class);
+sessionBuilder.addAnnotatedClass(Order.class);
+sessionBuilder.addAnnotatedClasses(CardDetails.class);
 return sessionBuilder.buildSessionFactory();
 }
 @Autowired

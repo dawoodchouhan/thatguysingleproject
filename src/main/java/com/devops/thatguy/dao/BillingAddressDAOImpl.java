@@ -28,7 +28,7 @@ public class BillingAddressDAOImpl implements BillingAddressDAO {
 	@Transactional
 	public void deleteBillingAddress(String billingAddressId) {
 		BillingAddress billingAddressToDelete = new BillingAddress();
-		billingAddressToDelete.setBillingAddressId(billingAddressId);
+		//billingAddressToDelete.setBillingAddressId(billingAddressId);
 		sessionFactory.getCurrentSession().delete(billingAddressToDelete);
 
 	}
