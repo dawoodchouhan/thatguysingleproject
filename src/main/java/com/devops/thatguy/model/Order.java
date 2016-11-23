@@ -15,9 +15,10 @@ public class Order implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private String userId ;
-	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int orderId ;
-	private Double totalRs ;
+	private Long totalRs ;
 	/*private String payMethod ;*/
 	private ShippingAddress shippingAddress ;
 	private BillingAddress billingAddress ;
@@ -38,11 +39,11 @@ public class Order implements Serializable{
 		this.userId = userId;
 	}
 
-	public Double getTotalRs() {
+	public Long getTotalRs() {
 		return totalRs;
 	}
-	public void setTotalRs(Double totalRs) {
-		this.totalRs = totalRs;
+	public void setTotalRs(Long totalRs2) {
+		this.totalRs = totalRs2;
 	}
 	public ShippingAddress getShippingAddress() {
 		return shippingAddress;

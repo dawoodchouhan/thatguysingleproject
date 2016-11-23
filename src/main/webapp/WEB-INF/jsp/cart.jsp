@@ -133,7 +133,7 @@
 								
 									<div class="col-xs-3">
 										 <a class="btn btn-md btn-success" style="text-decoration: none"
-							href="/viewcart/checkout">Checkout</a>
+							href="checkout">Checkout</a>
 									</div>
 									
 								</form>

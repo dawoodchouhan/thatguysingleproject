@@ -131,7 +131,7 @@ public class CartController {
 	
 	
 	
-	@RequestMapping(value="/viewcart/checkout")
+	@RequestMapping(value="checkout")
 	public ModelAndView goToBillingAddress(@ModelAttribute("billingAddress") BillingAddress billingAddress) {
 		ModelAndView modelAndView = new ModelAndView("redirect:/checkout");
 		return modelAndView;

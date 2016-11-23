@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -52,6 +53,16 @@ public class CartDAOImpl implements CartDAO {
 		sessionFactory.getCurrentSession().saveOrUpdate(cart);
 		
 	}
+	@Transactional
+	public void updateCart(String userId) {
+		Session session = sessionFactory.getCurrentSession();
+		String hql = "UPDATE Cart set status = 'D' where userId = '"+ userId + "' and status = 'N'";
+		Query query = session.createQuery(hql);
+		query.executeUpdate();
+		
+
+		
+}
 	@Transactional
 	public void delete(int cartid) {
 		Cart cart = new Cart();
